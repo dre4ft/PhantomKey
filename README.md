@@ -35,7 +35,7 @@ With PhantomKey, you're in control of every keystroke, mouse movement, and actio
 2. **Compile Your Script**  
    Run the PhantomKey compiler to generate a `.bin` file:  
    ```bash
-   phantomkey-compiler my_script.pk -o output.bin
+   phantomkey my_script.pk -o output.bin
    ```
 
 3. **Flash Your Device**  
