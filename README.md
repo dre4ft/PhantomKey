@@ -50,7 +50,7 @@ With PhantomKey, you're in control of every keystroke, mouse movement, and actio
 Clone the repository and build the compiler:  
 ```bash
 git clone https://github.com/yourusername/phantomkey.git
-cd phantomkey
+cd phantomkey/src/
 cargo build --release  # Or use the precompiled binaries
 ```
 
