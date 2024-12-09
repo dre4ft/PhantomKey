@@ -1,91 +1,100 @@
 # **PhantomKey**  
-A sleek, powerful, and customizable scripting language for creating HID-based automation. Transform your Human Interface Device (HID) into a precision tool with PhantomKey—crafted for flexibility, ease of use, and lightning-fast execution.
+
+Unleash the full potential of your HID devices with **PhantomKey**—a next-generation scripting engine designed for precision, flexibility, and ease of use. PhantomKey takes HID automation to the next level, integrating scripting, event handling, and seamless device interaction into a single, powerful tool.  
 
 ---
 
 ## **🚀 What is PhantomKey?**  
-PhantomKey is a custom scripting language designed to make writing HID scripts simple yet powerful. Whether you're building macros, automating workflows, or experimenting with HID devices, PhantomKey compiles your scripts into `.bin` files ready to be flashed onto a device like a USB Rubber Ducky or any compatible programmable HID.
+PhantomKey is a unified HID scripting **engine** that enables the creation and execution of complex workflows for keyboards, mice, and other HID devices.  
+From parsing scripts to streaming HID commands directly to your devices, PhantomKey combines everything into one cohesive process, giving you complete control over multiple interfaces in real time.  
 
-With PhantomKey, you're in control of every keystroke, mouse movement, and action your device executes.
+With PhantomKey, you can script, execute, and manage intricate HID events with unparalleled simplicity and power.  
 
 ---
 
 ## **✨ Features**  
-- **Human-Readable Syntax**: Intuitive and straightforward commands for rapid scripting.  
-- **Custom HID Actions**: Support for keyboard input, mouse movement, delays, and more.  
-- **Fast Compilation**: Turn your scripts into `.bin` files in seconds.  
-- **Cross-Platform**: Use PhantomKey on Linux, macOS, or Windows.  
-- **Expandable**: Open-source and customizable—extend the language to fit your needs.  
-- **Stealth and Precision**: Perfect for debugging, testing, or creating automation workflows.  
+- **Unified Execution**: Compile, stream, and manage HID events in a single workflow.  
+- **Multi-Interface Support**: Simultaneously control multiple HID interfaces (keyboard + mouse).  
+- **Event Handling**: Execute advanced actions like `WAIT` for dynamic, context-aware automation.  
+- **Custom HID Actions**: Keyboard input, mouse movement, delays, and more.  
+- **Real-Time Streaming**: Send HID commands directly to devices without intermediate steps.  
+- **Cross-Platform Compatibility**: Works on Linux, macOS, and Windows.  
+- **Powerful Syntax**: Write concise, human-readable scripts for maximum efficiency.  
 
 ---
 
 ## **🛠️ How it Works**  
 1. **Write Your Script**  
-   Use PhantomKey's simple and flexible syntax. Here's an example:  
+   Use PhantomKey's simple and flexible syntax to define your automation flow:  
    ```plaintext
    DELAY 1000
    STRING Hello, World!
    ENTER
-   DELAY 500
-   MOVE_MOUSE 50, 50
+   WAIT "USB Connected"
+   MOVE_MOUSE 100, 50
    CLICK LEFT
    ```
 
-2. **Compile Your Script**  
-   Run the PhantomKey compiler to generate a `.bin` file:  
+2. **Execute Your Script**  
+   PhantomKey handles the entire lifecycle of your script: parsing, compiling, and sending HID events to your chosen interfaces.  
    ```bash
-   phantomkey my_script.pk -o output.bin
+   phantomkey -run my_script.pk -interface keyboard:1 mouse:2
    ```
 
-3. **Flash Your Device**  
-   Use your favorite HID device flashing tool to load the `.bin` file.
+3. **Control Multiple Devices**  
+   Stream commands to multiple HID interfaces in parallel for advanced use cases.  
 
-4. **Run and Watch the Magic**  
-   Plug in your HID device and see your script in action.
+4. **Manage Events**  
+   Use context-sensitive events like `WAIT` to pause execution based on real-world conditions.  
 
 ---
 
 ## **📦 Installation**  
-Clone the repository and build the compiler:  
+Clone the repository and build PhantomKey:  
 ```bash
 git clone https://github.com/yourusername/phantomkey.git
 cd phantomkey/src/
-cargo build --release  # Or use the precompiled binaries
+cargo build --release
 ```
 
 ---
 
 ## **📝 Syntax Overview**  
-PhantomKey's syntax is clean, readable, and powerful.  
+PhantomKey’s syntax is designed for clarity and power, supporting both simple and advanced workflows.  
 
 | **Command**         | **Description**                                      |  
 |----------------------|------------------------------------------------------|  
 | `STRING <text>`      | Types the provided text.                             |  
 | `DELAY <ms>`         | Waits for the specified number of milliseconds.      |  
+| `WAIT <condition>`   | Pauses execution until the specified condition is met. |  
 | `MOVE_MOUSE <x, y>`  | Moves the mouse by the given x and y deltas.         |  
 | `CLICK <button>`     | Clicks a mouse button (`LEFT`, `RIGHT`, `MIDDLE`).   |  
 | `ENTER`              | Simulates the "Enter" key press.                    |  
 
+---
+
+## **🌌 Why PhantomKey?**  
+PhantomKey is the ultimate tool for HID automation enthusiasts, tinkerers, and professionals. Its real-time capabilities, multi-interface support, and event-driven design make it an indispensable companion for debugging, workflow automation, or experimentation.  
+
+---
+
+## **🌟 Roadmap**  
+- [x] Unified HID scripting engine.  
+- [x] Real-time streaming to multiple interfaces.  
+- [x] Event-driven commands like `WAIT`.  
+- [x] Basic script parsing and execution.  
+- [ ] Advanced HID command compiler for `.bin` generation.  
+- [ ] Support for conditional scripting (e.g., `IF/ELSE`).  
+- [ ] Enhanced device diagnostics and state tracking.  
+- [ ] Extensible plugin system for custom commands and events.  
+- [ ] Integrated debugging tools for testing and validation.  
 
 ---
 
 ## **👩‍💻 Contributing**  
-We welcome contributions to make PhantomKey even better! Here's how you can help:  
-- Report bugs and suggest features via [issues](issues/).  
-- Submit pull requests with new features, bug fixes, or improvements.  
-- Share your scripts and use cases to inspire others.  
+We’re building PhantomKey for everyone. Contribute by reporting bugs, suggesting features, or submitting pull requests.  
 
 ---
 
 ## **⚖️ License**  
-PhantomKey is open-source and licensed under the [MIT License](LICENSE).
-
----
-
-## **🌟 Why Choose PhantomKey?**  
-PhantomKey is built to empower developers, tinkerers, and automation enthusiasts. Its simplicity and versatility make it perfect for beginners and experts alike. Whether you’re looking to automate repetitive tasks, experiment with HID devices, or simply learn something new, PhantomKey is your go-to scripting language.
-
----
-
-
+PhantomKey is open-source and licensed under the [MIT License](LICENSE).  
